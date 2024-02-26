@@ -7,6 +7,7 @@
 
 #include <algorithm>
 #include <cstring>
+#include <cstdint>
 
 OPENTELEMETRY_BEGIN_NAMESPACE
 namespace trace
