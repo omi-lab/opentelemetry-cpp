@@ -46,7 +46,8 @@ void BM_ParentBasedSamplerConstruction(benchmark::State &state)
 {
   while (state.KeepRunning())
   {
-    benchmark::DoNotOptimize(ParentBasedSampler(std::make_shared<AlwaysOnSampler>()));
+    //ablinov: adding extra 10 to fix build error on alipine linux 3.20
+    benchmark::DoNotOptimize((ParentBasedSampler(std::make_shared<AlwaysOnSampler>()),10));
   }
 }
 BENCHMARK(BM_ParentBasedSamplerConstruction);
@@ -55,7 +56,8 @@ void BM_TraceIdRatioBasedSamplerConstruction(benchmark::State &state)
 {
   while (state.KeepRunning())
   {
-    benchmark::DoNotOptimize(TraceIdRatioBasedSampler(0.01));
+    //ablinov: adding extra 10 to fix build error on alipine linux 3.20
+    benchmark::DoNotOptimize((TraceIdRatioBasedSampler(0.01),10));
   }
 }
 BENCHMARK(BM_TraceIdRatioBasedSamplerConstruction);
